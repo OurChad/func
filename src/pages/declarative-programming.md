@@ -3,6 +3,8 @@ title: "Declarative Programming"
 date: "2019-10-31"
 next: "declarative-programming"
 nextLabel: "Declarative Programming"
+previous: "/"
+previousLabel: "What is Functional Programming?"
 ---
 
 Functional programming is **declarative** rather than imperative, and **application state flows through pure functions**.

@@ -40,11 +40,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-
-  createRedirect({
-    fromPath: `/`,
-    toPath: `/what-the-func/`,
-    redirectInBrowser: true,
-    isPermanent: true,
-  });
 };

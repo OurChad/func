@@ -3,6 +3,8 @@ title: "What is functional programming?"
 date: "2019-10-31"
 next: "declarative-programming"
 nextLabel: "Declarative Programming"
+previous: ""
+previousLabel: ""
 ---
 
 Functional programming is the process of building software by **composing pure functions**, avoiding **shared state, mutable data, and side-effects**.
