@@ -27,7 +27,7 @@ A pure function produces no side effects, which means that it can’t alter any 
 
 #### What makes a function impure? (Side-effects)
 Anything that can **make the result** of the function **inconsistent**.
-- Shared state
+- Shared state (If you’re unfamiliar with the term state, it’s basically information about something held in memory — which should sound a lot like variables)
 - Mutable data
 - Side effects
 
