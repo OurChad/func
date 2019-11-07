@@ -83,4 +83,6 @@ The point is: `You don't need to know the how`
 
 ## State flows through pure functions
 
+**state** - it’s basically information about something held in memory — which should sound a lot like variables
+
 ## Reactive Programming
