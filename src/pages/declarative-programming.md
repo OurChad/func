@@ -1,8 +1,8 @@
 ---
 title: "Declarative Programming"
 date: "2019-10-31"
-next: "declarative-programming"
-nextLabel: "Declarative Programming"
+next: "composition"
+nextLabel: "Composition"
 previous: "/"
 previousLabel: "What is Functional Programming?"
 ---
