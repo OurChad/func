@@ -21,6 +21,9 @@ const AppName = styled.h1`
 const StyledLink = styled(Link)`
   color: var(--primary-light);
   text-decoration: none;
+  &:hover {
+    color: var(--primary-light);
+  }
 `;
 
 const Header = ({ siteTitle }) => (
