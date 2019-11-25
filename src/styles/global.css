@@ -155,6 +155,9 @@ html {
     color: var(--tertiary-color);
     text-decoration: none;
   }
+  a:hover {
+    color: var(--primary-color);
+  }
   blockquote {
     margin-left: 1.45rem;
     margin-right: 1.45rem;
