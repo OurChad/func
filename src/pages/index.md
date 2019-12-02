@@ -20,16 +20,16 @@ const doubleOfThreePlusOne = plusOne(double(3))
 // 7
 ```
  
-### Pure Functions
+## Pure Functions
 
-Having in mind that functions are a process that receives some inputs and produces some output a pure function will be **a function that given the same input, will always return the same output and doesn't produce any side-effect.**
+Having in mind that functions are a process that receives some inputs and produces some output a pure function will, **given the same input, always return the same output and doesn't produce any side-effect.**
+
 A pure function produces no side effects, which means that it can’t alter any external state. 
 
-#### What makes a function impure? (Side-effects)
+### What makes a function impure? (Side-effects)
 Anything that can **make the result** of the function **inconsistent**.
 - Shared state (If you’re unfamiliar with the term state, it’s basically information about something held in memory — which should sound a lot like variables)
 - Mutable data
-- Side effects
 
 ```js
 const selectedCoverages = []
@@ -56,7 +56,7 @@ coverage1.selected = false
 // Now the array of terms on the coverage just have a undefined value
 term1 = undefined
 ```
-Using Pure functions
+Lets look at the same example using Pure functions
 ```js
 const selectedCoverages = []
 const coverage1 = {
