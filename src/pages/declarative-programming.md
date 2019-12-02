@@ -81,8 +81,108 @@ The point is: `You don't need to know the how`
 #### Cons
 - Normally, more abstractions means a downside on performance
 
+
+
 ## State flows through pure functions
 
-**state** - it’s basically information about something held in memory — which should sound a lot like variables
+### Higher order functions
 
-## Reactive Programming
+A higher order function is a function that takes a function as an argument, or returns a function.
+
+Example of some HoF is `.map`, `.reduce` and `.filter`. They take a function as an argument. They're higher order functions.
+
+Higher order functions allow us to abstract repeated implementation in a declarative way and apply it in different contexts.
+
+### Currying
+
+A curried function is a function that takes multiple arguments one at a time. Given a function with 3 parameters, the curried version will take one argument and return a function that takes the next argument, which returns a function that takes the third argument. The last function returns the result of applying the function to all of its arguments
+
+```js
+  // add = a => b => Number
+  const add = a => b => a + b;
+
+  const result = add(2)(3); // => 5
+```
+
+The add function takes one argument, and then returns a **partial application** of itself with a fixed in the **closure** scope.
+
+A partial application is a function which has been applied to some, but not yet all of its arguments. In other words, it’s a function which has some arguments fixed inside its closure scope.
+
+
+**With currying and HoF our power to do composition increse immensely allowing us to create simple pipelines of functions where the data(state) flows through**
+
+
+### How that looks like when it's all combined?
+
+```js
+const metadata = {
+    "component": "StepPage",
+    "route": "address",
+    "id": "address",
+    "type": "page",
+    "content": [
+      {
+        "id": "state",
+        "type": "field",
+        "componentProps": {
+          "required": true,
+          "availableValues": [
+            {
+              "code": "CA",
+              "name": "California"
+            },
+            {
+              "code": "IL",
+              "name": "Illinois"
+            },
+            {
+              "code": "HI",
+              "name": "Hawaii"
+            },
+            {
+              "code": "NY",
+              "name": "New York"
+            }
+          ]
+        }
+      }
+    ]
+  }
+
+  // Imperative programming
+  const removeAvaiableValuesFromField = (id, valuesToRemove, metadata) => {
+    let filteredAvaiableValues = [];
+
+    for (let i = 0; i < metadata.content.length; i++) {
+      let fieldAvaiableValues = metadata.content[i].componentProps.avaiableValues;
+      for (let j = 0; j < fieldAvaiableValues.length; j++) {
+        if(!valuesToRemove.includes(fieldAvaiableValues[j].code)) {
+          filteredAvaiableValues.push(fieldAvaiableValues[j].code)
+        }
+      }
+    }
+  
+    return filteredAvaiableValues
+  }
+
+  // Somewhat functional/declarative
+  const removeAvaiableValuesFromField = (id, valuesToRemove, metadata) => {
+    const content = metadata.content
+    const field = content.find((field) => field.id === id)
+    const avaiableValues = field.componentProps.avaiableValues
+    return avaiableValues.filter(value => !valuesToRemove.includes(value.code))
+  }
+
+
+  // Data flowing through functions
+  const removeAvaiableValuesFromField = (id, valuesToRemove) => compose(
+    filter(value => !valuesToRemove.includes(value.code)),
+    path(['componentProps, avaiableValues']),
+    find(isMatch({ id }),
+    path('content')
+  )
+
+  const filteredAvaiableValues = removeAvaiableValuesFromField('state', [ "CA", "IL" ])(metadata)
+
+```
+

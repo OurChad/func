@@ -1,5 +1,5 @@
 ---
-title: "Composition"
+title: "Composing behaviours"
 date: "2019-10-31"
 next: "summary"
 nextLabel: "Summary"

@@ -84,5 +84,3 @@ const selectedCoveragesWithNewCoverage = addNewCoverage(coverage1WithTerm)
 const selectedCoveragesWithNewCoverage = addNewCoverage(addTerm(coverage1, term1))
 
 ```
-
-Is redux shared state?
