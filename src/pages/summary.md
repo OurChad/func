@@ -23,4 +23,6 @@ Below is a list of resources that are definitely worth reading to learn more abo
 
 [Functional JS Series (7 articles)](https://medium.com/dailyjs/functional-js-1-introduction-7908bfe5ef8d)
 
+[Mastering the Javascript interview](https://medium.com/javascript-scene/composing-software-the-book-f31c77fc3ddc)
+
 [Making setInterval Declarative with React Hooks](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
