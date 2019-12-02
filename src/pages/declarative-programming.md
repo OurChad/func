@@ -186,3 +186,12 @@ const metadata = {
 
 ```
 
+## Reactive Programming
+
+Reactive programming is a subset of declarative programming where you declare how your application will behave in reaction to data streams.
+Data stream is basically any event that you can track and react to.
+
+The observable design pattern is basically one implementation of reactive proggamming.
+
+- Reactive Programming raises the level of abstraction of your code, allowing the developer to focus in defining the busines logic.
+- Allow you to define how independent parts of your application will **behave** given a state.
